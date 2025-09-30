@@ -38,7 +38,7 @@ def extract_features_for_windows(windows: np.ndarray, fs: float) -> np.ndarray:
 
 
 def majority_label_per_window(labels: np.ndarray, win_len: int, step: int) -> np.ndarray:
-    # labels shape: (num_samples,)
+    
     starts = np.arange(0, len(labels) - win_len + 1, step)
     y = []
     for s in starts:
