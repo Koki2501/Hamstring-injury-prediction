@@ -55,7 +55,7 @@ def run_pipeline(day_files: List[str], emg_fs: float = 2000.0, imu_fs: float = 2
         d = load_hdf5_session(p)
         day_data.append(d)
 
-    # Use EMG primarily; optionally concatenate IMU later
+    
     day_features = []
     day_labels = []
     for d in day_data:
