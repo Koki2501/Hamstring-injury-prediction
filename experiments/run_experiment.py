@@ -22,7 +22,7 @@ def extract_features_for_windows(windows: np.ndarray, fs: float) -> np.ndarray:
     num_windows, win_len, num_channels = windows.shape
     feats: List[Dict[str, float]] = []
     feat_names: List[str] = []
-    # Compute features per channel then concatenate
+    
     for w in windows:
         feat_vec = []
         for ch in range(num_channels):
