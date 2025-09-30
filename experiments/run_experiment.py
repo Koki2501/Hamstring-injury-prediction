@@ -49,7 +49,7 @@ def majority_label_per_window(labels: np.ndarray, win_len: int, step: int) -> np
 
 
 def run_pipeline(day_files: List[str], emg_fs: float = 2000.0, imu_fs: float = 240.0):
-    # Load Day 1 as training, Days 2-4 as evaluation
+    
     day_data = []
     for p in day_files:
         d = load_hdf5_session(p)
