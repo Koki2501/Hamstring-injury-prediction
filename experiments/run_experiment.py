@@ -74,7 +74,7 @@ def run_pipeline(day_files: List[str], emg_fs: float = 2000.0, imu_fs: float = 2
     X_train, y_train = day_features[0], day_labels[0]
 
     num_classes = int(np.max(np.concatenate(day_labels)) + 1)
-    # Train FFNN
+    
     ffnn = build_ffnn(input_dim=X_train.shape[1], num_classes=num_classes)
     hist_ff = ffnn.fit(X_train, y_train, epochs=10, batch_size=64, verbose=0)
     plot_metric_curve(hist_ff, "loss", "FFNN Loss", os.path.join("outputs", "ffnn_loss.png"))
