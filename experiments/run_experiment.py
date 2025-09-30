@@ -80,8 +80,8 @@ def run_pipeline(day_files: List[str], emg_fs: float = 2000.0, imu_fs: float = 2
     plot_metric_curve(hist_ff, "loss", "FFNN Loss", os.path.join("outputs", "ffnn_loss.png"))
     plot_metric_curve(hist_ff, "accuracy", "FFNN Accuracy", os.path.join("outputs", "ffnn_acc.png"))
 
-    # Train LSTM (reshape for sequence input)
-    X_train_seq = X_train.reshape(X_train.shape[0], 1, X_train.shape[1])  # (samples, timesteps, features)
+    
+    X_train_seq = X_train.reshape(X_train.shape[0], 1, X_train.shape[1]) 
     lstm = build_lstm(input_timesteps=1, input_channels=X_train.shape[1], num_classes=num_classes)
     hist_lstm = lstm.fit(X_train_seq, y_train, epochs=10, batch_size=64, verbose=0)
     plot_metric_curve(hist_lstm, "loss", "LSTM Loss", os.path.join("outputs", "lstm_loss.png"))
