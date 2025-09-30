@@ -87,7 +87,7 @@ def run_pipeline(day_files: List[str], emg_fs: float = 2000.0, imu_fs: float = 2
     plot_metric_curve(hist_lstm, "loss", "LSTM Loss", os.path.join("outputs", "lstm_loss.png"))
     plot_metric_curve(hist_lstm, "accuracy", "LSTM Accuracy", os.path.join("outputs", "lstm_acc.png"))
 
-    # Create ensemble
+    
     ensemble = EnsembleModel([ffnn, lstm], weights=[0.6, 0.4])
 
     # Save artifacts for hardware inference
